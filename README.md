@@ -11,7 +11,7 @@ Once you have done the test, please complete [This Form](https://forms.gle/hfTwN
 ## Required Changes.
 
 - Code Clean Up.
-- Inputting a 'Weight' to retrieve a quote by, currently this is not optional.
+- Inputting a 'Weight' to retrieve a quote by, currently this is hardcoded.
 - Sorting of the results in UI.
 - Implement Unit Testing.
 
