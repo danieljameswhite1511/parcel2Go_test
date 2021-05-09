@@ -9,7 +9,7 @@ API: requires .net5.0
 
 Client:
 
-Install node.js
+> Install node.js
 
 > cd client/parcel2go
 > 
