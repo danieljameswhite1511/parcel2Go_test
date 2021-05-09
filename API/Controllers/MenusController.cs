@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
+using Core.Specifications;
 using Infrastructure.Data;
 using Infrastructure.Data.EntityExtensions;
 using Infrastructure.Repositories;
@@ -32,7 +33,12 @@ namespace API.Controllers
     public async Task<ActionResult<MenuDto>> GetMenu([FromQuery] string name)
     {
 
-      var menu = await _menuRepsoitory.ReturnQueryableWhereAndInclude(x=>x.Name==name , x=>x.MenuItems).FirstOrDefaultAsync();
+      //I have left this in to demonstrate that there is a generic and configurable way to achieve the same result
+
+      //var menu = await _menuRepsoitory.ReturnQueryableWhereAndInclude(x=>x.Name==name , x=>x.MenuItems).FirstOrDefaultAsync();
+
+      var menu = await _menuRepsoitory.SingleAsyncByQuerySpecification(new MenuAndMenuItems(name));
+
 
       var menuDto = _mapper.Map<Menu, MenuDto>(menu);   
 
