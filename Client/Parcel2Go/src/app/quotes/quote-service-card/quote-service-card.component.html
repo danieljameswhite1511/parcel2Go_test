@@ -1,0 +1,26 @@
+
+<div class="text-center pt-2">
+  <h2>
+    We search for the best quotes from over {{services.length}} courier services.
+
+  </h2>
+
+<div class="row pt-3">
+  <div class="col-3 mt-2" *ngFor="let service of services">
+
+    <div class="card">
+      <div class="card-header">
+        {{service.courierName}}
+      </div>
+      <div class="card-body text-center">
+        <img src="{{service.imagelarge}}" alt="">
+      </div>
+      <div class="card-footer">
+        {{service.name}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>

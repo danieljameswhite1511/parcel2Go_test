@@ -1,0 +1,27 @@
+
+<div class="pt-5">
+  <form [formGroup]="form" *ngIf="form" (ngSubmit)="submit()">
+    <div class="container d-flex justify-content-center">
+      <div class="row">
+      <div class="col-12 text-center">
+        <h1>Select a weight to get quotes</h1>
+         <div class="pt-5">
+          <button type="button" class="btn btn-primary m-1" *ngFor="let weight of weights" (click)="getQuotes(weight)">{{weight}}kg</button>
+        </div>
+        <div *ngIf="quotes" class="pt-4">
+          <h1>{{quotes.length}} Quotes Found!</h1>
+          Sort these by price to find your best deal.
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
+<div class="pt-5">
+  <app-quote-card (asc)="sortAsc()" (desc)="sortDesc()" [quotes]="quotes" [weight]="weight"></app-quote-card>
+</div>
+
+<ng-container *ngIf="!quotes">
+  <app-quote-service-card [services]="services" ></app-quote-service-card>
+</ng-container>
+

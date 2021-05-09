@@ -1,0 +1,32 @@
+<div *ngIf="quotes">
+  <button class="btn btn-primary" (click)="sortAsc()">Price: High</button>
+  <button class="btn btn-primary m-2" (click)="sortDesc()">Price: Low</button>
+  <div class="row">
+    <div class="col-4 pt-2" *ngFor="let quote of quotes">
+      <div class="card h-100">
+        <div class="card-header">
+          <img src="{{quote.service.links.imageSmall}}" alt="" style="width: 25px;">
+          {{quote.service.courierName}}
+        </div>
+        <div class="card-body h-100">
+          <div>
+            <h5>{{weight}}kg for £{{quote.totalPrice}}</h5>
+            <small>Collection Type: {{quote.service.collectionType}}</small><br/>
+            <small>Delivery Type: {{quote.service.deliveryType}}</small><br/>
+          </div>
+          <div>
+            <h5>Available Extras:</h5>
+          <ul>
+            <li *ngFor="let availableExtra of quote.availableExtras">
+              <small>{{availableExtra.type}} £{{availableExtra.price}}</small>
+            </li>
+          </ul>
+          </div>
+        </div>
+        <div class="card-footer h-100">
+          <small>{{quote.service.name}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

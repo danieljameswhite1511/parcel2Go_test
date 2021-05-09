@@ -1,0 +1,18 @@
+[
+  {
+      "Id": 1,
+      "LinkText": "Home",
+      "Url": "/",
+      "SortOrder": 1,
+      "MenuId": 1,
+      "ParentId": null
+  },
+  {
+      "Id": 2,
+      "LinkText": "Get A Quote",
+      "Url": "/quotes",
+      "SortOrder": 1,
+      "MenuId": 1,
+      "ParentId": null
+  }
+]

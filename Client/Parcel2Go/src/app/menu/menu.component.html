@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-auto" id="navbarTogglerDemo01">
+      <a class="navbar-brand" alt="Parcel2Go" href="/">
+        <img src="https://cdn.parcel2go.com/42c5534b-0f47-4342-80f0-8f21203f0669/layout/p2g_logo_new.svg" alt="Parcel2Go" style="width: 200px;">
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+        <li class="nav-item" *ngFor="let menuitem of menuItems">
+          <a class="nav-link active" aria-current="page" href="{{menuitem.url}}">{{menuitem.linkText}}</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

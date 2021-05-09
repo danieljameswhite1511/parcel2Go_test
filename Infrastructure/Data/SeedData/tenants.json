@@ -1,0 +1,18 @@
+[
+  {
+    "id":1,
+    "Name":"AngularClient",
+    "Host": "localhost:4200",
+    "ClientId": "ea3008fec7784ee29bd2aa1e00c0d3c9:TechTest",
+    "ClientSecret": "parcel2go-technical-test",
+    "Scope": "public-api"
+  },
+  {
+    "id":1,
+    "Name":"AngularClient",
+    "Host": "localhost:5001",
+    "ClientId": "ea3008fec7784ee29bd2aa1e00c0d3c9:TechTest",
+    "ClientSecret": "parcel2go-technical-test",
+    "Scope": "public-api"
+  }
+]
