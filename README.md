@@ -19,6 +19,8 @@ Client:
 > 
 > ng serve --ssl
 
+Parcel2Go Client: https://localhost:4200
+
 Swagger doc : https://localhost:5001/swagger
 
 
