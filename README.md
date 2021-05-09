@@ -1,3 +1,17 @@
+To run tne project
+API:
+cd api
+dotnet watch run
+
+
+Client:
+Install angular cli : npm i @angular/cli@latest
+> cd client/parcel2go
+> ng serve --ssl
+
+Swagger doc : https://localhost:5001/swagger
+
+
 # P2G Coding Test.
 
 The project in this repo currently pulls in a list of quotes from P2G's public API and dumps them on a page.
