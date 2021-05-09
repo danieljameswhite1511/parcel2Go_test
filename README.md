@@ -8,9 +8,13 @@ API:
 
 
 Client:
+
 Install node.js
+
 Install package dependencies: npm i
+
 Install angular cli : npm i @angular/cli@latest
+
 
 > cd client/parcel2go
 > 
