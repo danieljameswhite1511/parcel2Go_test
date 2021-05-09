@@ -1,6 +1,6 @@
 To run tne project
 
-API:
+API: requires .net5.0
 
 > cd api
 
@@ -11,12 +11,11 @@ Client:
 
 Install node.js
 
-Install package dependencies: npm i
-
-Install angular cli : npm i @angular/cli@latest
-
-
 > cd client/parcel2go
+> 
+> Install package dependencies: npm i
+
+> Install angular cli: npm i @angular/cli@latest
 > 
 > ng serve --ssl
 
