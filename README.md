@@ -1,6 +1,6 @@
 To run tne project
 
-API: requires .net5.0
+API: TargetFramework net5.0
 
 > cd api
 
