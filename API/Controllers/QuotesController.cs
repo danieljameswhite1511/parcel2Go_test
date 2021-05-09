@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+ using System.Threading.Tasks;
 using Core.Entities;
 using Infrastructure.Repositories;
 using Infrastructure.Services.Quotes;
@@ -25,7 +25,15 @@ namespace QuoteRetriever.Controllers
     {
         var quotes = await this._quoteService.GetQuotes(weight);
 
+        if(weight==0)
+        return BadRequest();
+
+        if(quotes==null)
+        return NotFound();
+        
         return Ok(quotes);
+
+        
 
     }
 

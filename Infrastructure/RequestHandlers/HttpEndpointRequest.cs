@@ -15,7 +15,7 @@ namespace Infrastructure.RequestHandlers
     private readonly HttpClient _httpClient;
 
     public HttpEndpointRequest(HttpClient httpClient)
-        {
+    {
       this._httpClient = httpClient;
     }
         public async Task<T> Get<T>(string url) where T : class
@@ -53,7 +53,5 @@ namespace Infrastructure.RequestHandlers
             return response;
             
         }
-
-        
     }
 }

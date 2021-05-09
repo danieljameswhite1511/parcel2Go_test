@@ -29,24 +29,6 @@ namespace Infrastructure.Services.Quotes
       _authCredentials = $"grant_type=client_credentials&scope={this._tenant.Scope}&client_id={this._tenant.ClientId}&client_secret={this._tenant.ClientSecret}";
     }
 
-    public async Task PopulateServices(List<Quote> quotes)
-    {
-      var services = await _serviceRepository.ListAllAsync();
-      foreach (var quote in quotes)
-      {
-        if(!services.Any(x=>x.Name==quote.Service.Name)){
-          var service = quote.Service;
-          service.Imagelarge = quote.Service.Links.Imagelarge;
-          service.ImageSmall = quote.Service.Links.ImageSmall;
-          service.ImageSvg = quote.Service.Links.ImageSvg;
-
-          service.Links=null;
-          
-          _serviceRepository.Add(service);
-          await _serviceRepository.Save();
-        }
-      }
-    }
 
     public async Task<List<Quote>> GetQuotes(decimal? weight)
     {
@@ -60,6 +42,7 @@ namespace Infrastructure.Services.Quotes
       if (authRequestResponse.AccessToken == null)
       {
         throw new Exception("Unable to authenticate request, no auth key response was returned from the authentication host: " + QuoteRequestParameters.AuthenticationEnpoint);
+
       }
 
       var quoteRequest = new QuoteRequest(weight);
@@ -73,5 +56,24 @@ namespace Infrastructure.Services.Quotes
       return quotesRequestResponse.Quotes;
 
     }
+
+    
+    private async Task PopulateServices(List<Quote> quotes)
+    {
+      var services = await _serviceRepository.ListAllAsync();
+      foreach (var quote in quotes)
+      {
+        if(!services.Any(x=>x.Name==quote.Service.Name)){
+          var service = quote.Service;
+          service.Imagelarge = quote.Service.Links.Imagelarge;
+          service.ImageSmall = quote.Service.Links.ImageSmall;
+          service.ImageSvg = quote.Service.Links.ImageSvg;
+          service.Links=null;
+          _serviceRepository.Add(service);
+          await _serviceRepository.Save();
+        }
+      }
+    }
+
   }
 }
