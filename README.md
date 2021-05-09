@@ -1,12 +1,17 @@
 To run tne project
+
 API:
-cd api
-dotnet watch run
+
+> cd api
+
+> dotnet watch run
 
 
 Client:
 Install angular cli : npm i @angular/cli@latest
+
 > cd client/parcel2go
+> 
 > ng serve --ssl
 
 Swagger doc : https://localhost:5001/swagger
